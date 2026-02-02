@@ -2,6 +2,10 @@
 
 A classical [Model Context Protocol (MCP)](https://modelcontextprotocol.io) server that generates ASCII art banners from any string using [pyfiglet](https://github.com/pwaller/pyfiglet).
 
+<a href="https://glama.ai/mcp/servers/@guilyx/ascii-banner-mcp">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@guilyx/ascii-banner-mcp/badge" />
+</a>
+
 ## Features
 
 - **`get_fonts`** — List all available pyfiglet font names (via `FigletFont.getFonts()`).
@@ -97,21 +101,21 @@ Via this MCP server: call `generate_banner` with `text="Hello"` and `font="slant
 
 Use [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) to test and debug the server.
 
-**Option 1 — stdio (local process)**  
-1. Run the Inspector: `npx @modelcontextprotocol/inspector`  
-2. In the UI, add a server with **Stdio** transport.  
-3. Set **Command** to `python` (or full path to your Python/venv).  
-4. Set **Args** to `-m`, `ascii_banner_mcp.server`.  
+**Option 1 — stdio (local process)**
+1. Run the Inspector: `npx @modelcontextprotocol/inspector`
+2. In the UI, add a server with **Stdio** transport.
+3. Set **Command** to `python` (or full path to your Python/venv).
+4. Set **Args** to `-m`, `ascii_banner_mcp.server`.
 5. Ensure the project is installed (`pip install -e .`) or set **cwd** to the project root and use `python -m ascii_banner_mcp.server`.
 
-**Option 2 — streamable-http (Docker or local)**  
+**Option 2 — streamable-http (Docker or local)**
 1. Start the server over HTTP:
-   - **Docker:** `docker compose -f .docker/docker-compose.yml up --build` (see [Docker](#docker) below).  
-   - **Local:** `MCP_TRANSPORT=streamable-http python -m ascii_banner_mcp.server` (serves at `http://127.0.0.1:8000/mcp`).  
-2. Run the Inspector: `npx @modelcontextprotocol/inspector`  
+   - **Docker:** `docker compose -f .docker/docker-compose.yml up --build` (see [Docker](#docker) below).
+   - **Local:** `MCP_TRANSPORT=streamable-http python -m ascii_banner_mcp.server` (serves at `http://127.0.0.1:8000/mcp`).
+2. Run the Inspector: `npx @modelcontextprotocol/inspector`
 3. Add a server with **Streamable HTTP** (or URL) and set the URL to `http://localhost:8000/mcp`.
 
-**Custom ports (Inspector):**  
+**Custom ports (Inspector):**
 `CLIENT_PORT=8080 SERVER_PORT=9000 npx @modelcontextprotocol/inspector`
 
 ### Docker
