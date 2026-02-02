@@ -1,0 +1,9 @@
+{
+  "$schema": "https://glama.ai/mcp/schemas/server.json",
+  "name": "ascii-banner-mcp",
+  "description": "MCP server that generates ASCII art banners from any string using pyfiglet. Tools: get_fonts (list fonts), generate_banner (render text as ASCII art).",
+  "maintainers": [
+    "guilyx"
+  ],
+  "repository": "https://github.com/guilyx/ascii_banner_mcp"
+}
