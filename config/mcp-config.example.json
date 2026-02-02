@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "ascii-banner": {
+      "command": "python",
+      "args": ["-m", "ascii_banner_mcp.server"]
+    }
+  }
+}
