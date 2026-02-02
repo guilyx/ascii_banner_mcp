@@ -1,0 +1,25 @@
+# See https://pre-commit.com for more information
+# Install: pip install pre-commit && pre-commit install && pre-commit install --hook-type commit-msg
+
+default_language_version:
+  python: python3
+
+repos:
+  - repo: https://github.com/psf/black
+    rev: 24.10.0
+    hooks:
+      - id: black
+        language_version: python3
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.0
+    hooks:
+      - id: ruff
+        args: [--fix]
+
+  # Conventional commits: feat:, fix:, chore:, docs:, style:, refactor:, test:, etc.
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.27.0
+    stages: [commit-msg]
+    hooks:
+      - id: commitizen

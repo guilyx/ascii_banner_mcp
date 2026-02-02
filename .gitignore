@@ -39,3 +39,6 @@ htmlcov/
 
 # Ruff
 .ruff_cache/
+
+# Pre-commit
+.cache/

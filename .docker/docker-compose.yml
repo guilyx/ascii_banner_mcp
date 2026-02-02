@@ -1,0 +1,15 @@
+# Run the MCP server over streamable-http (e.g. for MCP Inspector).
+# From project root: docker compose -f .docker/docker-compose.yml up --build
+
+services:
+  ascii-banner-mcp:
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+    environment:
+      MCP_TRANSPORT: streamable-http
+      FASTMCP_HOST: "0.0.0.0"
+      FASTMCP_PORT: "8000"
+    ports:
+      - "8000:8000"
+    command: ["python", "-m", "ascii_banner_mcp.server"]
